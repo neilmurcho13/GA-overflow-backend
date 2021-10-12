@@ -1,19 +1,19 @@
-import mongoose from 'mongoose'
-import mongooseUniqueValidator from 'mongoose-unique-validator'
+import mongoose from "mongoose";
+import mongooseUniqueValidator from "mongoose-unique-validator";
 
 const commentSchema = new mongoose.Schema(
   {
-    text: { type: String, required: true, maxlength: 300 },
-    createdBy: {
-      type: mongoose.Schema.ObjectId,
-      ref: 'User',
-      required: true
-    }
+    text: { type: String, required: true, maxlength: 300 }
+    //createdBy: {
+    //  type: mongoose.Schema.ObjectId,
+    //  ref: "User",
+    //  required: true
+    //}
   },
   {
     timestamps: true
   }
-)
+);
 
 const blogPostSchema = new mongoose.Schema({
   header: String,
@@ -21,17 +21,17 @@ const blogPostSchema = new mongoose.Schema({
   body: String,
   summary: String,
   bodyImgUrl: String,
-  tags: [{ type: String }],
-  createdBy: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'User',
-    required: true
-  },
+  //createdBy: {
+  //  tags: [{ type: String }],
+  //  type: mongoose.Schema.ObjectId,
+  //  ref: "User",
+  //  required: true
+  //},
   comments: [commentSchema]
-})
+});
 
-blogPostSchema.plugin(mongooseUniqueValidator)
+blogPostSchema.plugin(mongooseUniqueValidator);
 
-const Blog = mongoose.model('Blog', blogPostSchema)
+const Blog = mongoose.model("Blog", blogPostSchema);
 
-export default Blog
+export default Blog;

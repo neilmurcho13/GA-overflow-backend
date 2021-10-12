@@ -1,5 +1,6 @@
 import express from "express";
 import blogPostController from "../controllers/blogPostController.js";
+import { createComment } from "../controllers/commentsController.js";
 import userController from "../controllers/userController.js";
 
 const Router = express.Router();
@@ -15,6 +16,9 @@ Router.route("/blogs/:id")
   .delete(blogPostController.deleteBlog);
 
 Router.route("/search").get(blogPostController.searchBlogs);
+
+//* comments
+Router.route("/blogs/:id/comments").post(createComment);
 
 //* user
 Router.route("/register").post(userController.registerUser);
