@@ -2,6 +2,19 @@ import jwt from 'jsonwebtoken'
 import User from '../models/user.js'
 import { secret } from '../config/environment.js'
 
+async function getUser(req, res, next) {
+  try {
+    const user = await User.find()
+    return res.status(200).json(user)
+  } catch (err) {
+    next(err)
+  }
+}
+
+async function getProfile(req, res, next) {
+  return res.status(201).json(req.currentUser)
+}
+
 async function registerUser(req, res, next) {
   try {
     const user = await User.create(req.body)
@@ -37,5 +50,7 @@ async function loginUser(req, res, next) {
 
 export default {
   registerUser,
-  loginUser
+  loginUser,
+  getUser,
+  getProfile
 }
