@@ -9,7 +9,7 @@ const Router = express.Router()
 //* blogs
 Router.route('/blogs')
   .get(blogPostController.getAllBlogs)
-  .post(blogPostController.createBlog)
+  .post(secureRoute, blogPostController.createBlog)
 
 Router.route('/blogs/:id')
   .get(blogPostController.getBlog)

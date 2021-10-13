@@ -21,12 +21,12 @@ const blogPostSchema = new mongoose.Schema({
   body: String,
   summary: String,
   bodyImgUrl: String,
-  // createdBy: {
-  //   tags: [{ type: String }],
-  //   type: mongoose.Schema.ObjectId,
-  //   ref: 'User',
-  //   required: true
-  // },
+  tags: [{ type: String }],
+  createdBy: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+    required: true
+  },
   comments: [commentSchema]
 })
 
