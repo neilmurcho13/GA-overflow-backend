@@ -27,7 +27,7 @@ Router.route('/register').post(userController.registerUser)
 
 Router.route('/login').post(userController.loginUser)
 
-Router.route('/users').get(userController.getUser)
+// Router.route('/users').get(userController.getUser)
 
 Router.route('/user').get(secureRoute, userController.getProfile)
 
