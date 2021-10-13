@@ -3,7 +3,6 @@ import blogPostController from '../controllers/blogPostController.js'
 import { createComment } from '../controllers/commentsController.js'
 import userController from '../controllers/userController.js'
 import secureRoute from '../middleware/secureRoute.js'
-import User from '../models/user.js'
 
 const Router = express.Router()
 
@@ -26,8 +25,6 @@ Router.route('/blogs/:id/comments').post(createComment)
 Router.route('/register').post(userController.registerUser)
 
 Router.route('/login').post(userController.loginUser)
-
-// Router.route('/users').get(userController.getUser)
 
 Router.route('/user').get(secureRoute, userController.getProfile)
 
