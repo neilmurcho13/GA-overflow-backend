@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken'
 import User from '../models/user.js'
 import { secret } from '../config/environment.js'
 
-async function getUser(req, res, next) {
+async function getAllUsers(req, res, next) {
   try {
     const user = await User.find()
     return res.status(200).json(user)
@@ -51,6 +51,6 @@ async function loginUser(req, res, next) {
 export default {
   registerUser,
   loginUser,
-  getUser,
+  getAllUsers,
   getProfile
 }
