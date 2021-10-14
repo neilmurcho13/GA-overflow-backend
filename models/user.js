@@ -9,7 +9,9 @@ const user = new mongoose.Schema({
   lastName: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  location: { type: String, required: true }
+  location: { type: String, required: true },
+  githubLink: { type: String, required: true },
+  linkedinLink: { type: String, required: true }
   // status: {
   //   type: String,
   //   enum: ['student', 'alumni', 'instructor']
