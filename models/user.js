@@ -14,6 +14,7 @@ const user = new mongoose.Schema({
   linkedinLink: { type: String, required: true }
   // status: {
   //   type: String,
+  //   required: true,
   //   enum: ['student', 'alumni', 'instructor']
   // }
 })
