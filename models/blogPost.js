@@ -27,6 +27,7 @@ const blogPostSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
+  createdAt: { type: Date, default: Date.now },
   comments: [commentSchema]
 })
 
