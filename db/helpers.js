@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import { dbUri } from '../config/environment.js'
 
 export function connectDb() {
-  return mongoose.connect(process.env.DB_URI)
+  return mongoose.connect(dbUri)
 }
 
 export function truncateDb() {
