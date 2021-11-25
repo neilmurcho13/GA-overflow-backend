@@ -1,6 +1,9 @@
 import jwt from 'jsonwebtoken'
 import { secret } from '../config/environment.js'
 import User from '../models/user.js'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 // Make sure that the user making the request has a valid token and they exist.
 
